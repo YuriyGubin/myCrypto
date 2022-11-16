@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Otq-wD-Gmv">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="60" id="38d-vt-cke">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="60" id="38d-vt-cke" customClass="CustomViewCell" customModule="myCrypto" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="38d-vt-cke" id="S2p-oW-BZN">
@@ -69,6 +69,12 @@
                                         <constraint firstAttribute="bottom" secondItem="iH7-YU-Lar" secondAttribute="bottom" constant="5" id="wWO-uG-3a0"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="coinLogoImage" destination="iH7-YU-Lar" id="8Cr-ym-GIh"/>
+                                    <outlet property="coinNameLabel" destination="21w-Bu-WGt" id="QUi-9z-K48"/>
+                                    <outlet property="coinSymbolLabel" destination="MAh-Yx-z0Q" id="OO9-Xg-eZI"/>
+                                    <outlet property="priceLabel" destination="q78-r9-J8R" id="NFe-qV-WUh"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -77,12 +83,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="Jkl-xp-36w"/>
-                    <connections>
-                        <outlet property="coinLogoImage" destination="iH7-YU-Lar" id="nLM-kv-bwN"/>
-                        <outlet property="coinNameLabel" destination="21w-Bu-WGt" id="ddD-tn-N83"/>
-                        <outlet property="coinSymbolLabel" destination="MAh-Yx-z0Q" id="WN8-3G-oiw"/>
-                        <outlet property="priceLabel" destination="q78-r9-J8R" id="qMb-Zt-KaW"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jR7-V1-x7X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

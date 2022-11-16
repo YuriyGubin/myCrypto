@@ -9,24 +9,11 @@ import UIKit
 
 class StartViewController: UITableViewController {
     
-    
-    @IBOutlet var coinLogoImage: UIImageView!
-    
-    @IBOutlet var coinNameLabel: UILabel!
-    @IBOutlet var coinSymbolLabel: UILabel!
-    
-    @IBOutlet var priceLabel: UILabel!
-    
     private var crypto: Crypto?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        fetchCrypto()
     }
 
     // MARK: - Table view data source
@@ -38,9 +25,12 @@ class StartViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
-        // Configure the cell...
-
+        guard let cell = cell as? CustomViewCell else { return UITableViewCell() }
+        
+        if let crypto = crypto?.data[indexPath.row] {
+            cell.configure(with: crypto)
+        }
+        
         return cell
     }
     
@@ -89,5 +79,18 @@ class StartViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    private func fetchCrypto() {
+        NetworkManager.shared.fetchCrypto(from: Link.cryptoUrl.rawValue) { [weak self] result in
+            switch result {
+            case .success(let crypto):
+                self?.crypto = crypto
+                self?.tableView.reloadData()
+                print(crypto)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 
 }
