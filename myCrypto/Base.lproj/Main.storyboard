@@ -10,13 +10,13 @@
         <!--Root View Controller-->
         <scene sceneID="itw-wV-KH4">
             <objects>
-                <tableViewController id="H8q-8X-3wr" sceneMemberID="viewController">
+                <tableViewController id="H8q-8X-3wr" customClass="StartViewController" customModule="myCrypto" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="f6Q-J6-Nr0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="38d-vt-cke">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="60" id="38d-vt-cke">
                                 <rect key="frame" x="0.0" y="50" width="393" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="38d-vt-cke" id="S2p-oW-BZN">
@@ -77,6 +77,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="Jkl-xp-36w"/>
+                    <connections>
+                        <outlet property="coinLogoImage" destination="iH7-YU-Lar" id="nLM-kv-bwN"/>
+                        <outlet property="coinNameLabel" destination="21w-Bu-WGt" id="ddD-tn-N83"/>
+                        <outlet property="coinSymbolLabel" destination="MAh-Yx-z0Q" id="WN8-3G-oiw"/>
+                        <outlet property="priceLabel" destination="q78-r9-J8R" id="qMb-Zt-KaW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jR7-V1-x7X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
