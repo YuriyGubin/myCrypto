@@ -32,6 +32,9 @@ class CustomViewCell: UITableViewCell {
                 self.coinLogoImage.image = UIImage(data: imageData)
             }
         }
+        coinLogoImage.clipsToBounds = true
+        coinLogoImage.frame.size = CGSize(width: 50, height: 50)
+        
     }
 
 }

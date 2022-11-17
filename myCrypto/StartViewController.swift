@@ -13,6 +13,7 @@ class StartViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         fetchCrypto()
     }
 
