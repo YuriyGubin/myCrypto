@@ -93,10 +93,10 @@
             </objects>
             <point key="canvasLocation" x="519.84732824427476" y="41.549295774647888"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="JuE-9T-5iT">
             <objects>
-                <viewController id="WHM-RN-VE2" sceneMemberID="viewController">
+                <viewController id="WHM-RN-VE2" customClass="DetailViewController" customModule="myCrypto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Cg-hy-T8n">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,6 +204,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uNe-md-ehs"/>
+                    <connections>
+                        <outlet property="coinViewImage" destination="4Cg-hy-T8n" id="L9l-PO-m4t"/>
+                        <outlet property="dailyTradingLabel" destination="Hwg-5x-A6B" id="fvc-Ii-RdM"/>
+                        <outlet property="maxSupplyLabel" destination="h0U-pq-lpy" id="qqE-oP-Cmp"/>
+                        <outlet property="nameLabel" destination="sCF-Xw-ib2" id="Jc4-F1-Rvg"/>
+                        <outlet property="priceLabel" destination="bcZ-yY-TP3" id="G4Q-ug-163"/>
+                        <outlet property="symbolLabel" destination="IF8-wr-N4P" id="mbP-cV-ouA"/>
+                        <outlet property="totalSupplyLabel" destination="RUK-tA-6LU" id="w5i-G3-n7m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9D-Jm-SCI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
