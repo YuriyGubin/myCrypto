@@ -19,7 +19,7 @@ class CustomViewCell: UITableViewCell {
     func configure(with coin: CoinsData) {
         coinNameLabel.text = coin.name
         coinSymbolLabel.text = coin.symbol
-        priceLabel.text = String(format: "%.2f", coin.quote.USD.price)
+        priceLabel.text = "$" + String(format: "%.2f", coin.quote.USD.price)
         
         DispatchQueue.global().async {
             let stringUrl = "https://cryptoicons.org/api/icon/\(coin.symbol.lowercased())/50"

@@ -11,9 +11,12 @@ class StartViewController: UITableViewController {
     
     private var crypto: Crypto?
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = "myCrypto"
+        tableView.rowHeight = 65
         fetchCrypto()
     }
 
@@ -28,7 +31,8 @@ class StartViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         guard let cell = cell as? CustomViewCell else { return UITableViewCell() }
         
-        if let crypto = crypto?.data[indexPath.row] {
+        let sortedCrypto = crypto?.data.sorted(by: {$0.quote.USD.price > $1.quote.USD.price})
+        if let crypto = sortedCrypto?[indexPath.row] {
             cell.configure(with: crypto)
         }
         

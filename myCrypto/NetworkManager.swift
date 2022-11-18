@@ -37,6 +37,7 @@ class NetworkManager {
             
             do {
                 let crypto  = try JSONDecoder().decode(Crypto.self, from: data)
+                
                 DispatchQueue.main.async {
                     completion(.success(crypto))
                 }
